@@ -40,12 +40,17 @@ def build_parser() -> argparse.ArgumentParser:
         prog="second_brain",
         description="Second Brain CLI",
     )
+    parser.add_argument(
+        "--message",
+        default="Hello from second_brain!",
+        help="Message to log on startup.",
+    )
     return parser
 
 
 @logger.catch
 def main():
     parser = build_parser()
-    parser.parse_args()
+    args = parser.parse_args()
     configure_logging()
-    logger.info("Hello from second_brain!")
+    logger.info(args.message)
