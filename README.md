@@ -15,13 +15,9 @@ uv sync
 Via the CLI entrypoint:
 
 ```bash
-uv run second_brain
-```
-
-With dev environment variables loaded:
-
-```bash
-uv run --env-file .env second_brain
+uv run second_brain                                  # default message
+uv run second_brain --message "My custom message"    # custom message
+uv run --env-file .env second_brain                  # dev settings
 ```
 
 Via Python module:
